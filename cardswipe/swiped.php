@@ -1,6 +1,7 @@
 <html>
 
 	<?php
+	
 		$username = "username";
 		$password = "password";
 		$dbname = "database";
@@ -29,6 +30,8 @@
 	<head>
 		<title>Thank You!</title>
 		<link rel="stylesheet" href="style.css">
+		
+		<!-- Time out fuction for the card swipe to go back to   -->
 		<script type="text/javascript">
 			setTimeout(window.location.assign("cardswipe.php"), 3000);
 		</script>
