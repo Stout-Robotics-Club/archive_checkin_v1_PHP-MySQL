@@ -1,5 +1,8 @@
 <?php //echo html header ?>
-<?php	
+<?php
+	// do the session stuff?
+	include_once('session.php');
+	
 	$username = "username";
 	$password = "password";
 	$dbname = "database";
