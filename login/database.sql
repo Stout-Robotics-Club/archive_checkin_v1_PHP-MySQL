@@ -5,4 +5,4 @@ CREATE TABLE `login` (
 	PRIMARY KEY (`loginid`)
 );
 
-insert into login (username, password) value ('admin','password'
+insert into login (username, password) value ('admin','password');
