@@ -1,7 +1,7 @@
 <html>
 
 	<?php
-		$logFilename = ".swipes.log";
+		$logFilename = ".swipes.log.txt";
 		$theDate = exec("date +%Y-%m-%d_%H:%M:%S");
 		$ekDate = date("Y-m-d H:i:s");
 		echo($ekDate);
@@ -31,7 +31,7 @@
 		
 		$id = $_POST["id"];
 		
-		$sql = "INSERT INTO `database`.`table` (`time`, `id`) VALUES (NOW(), $id)";
+		$sql = "INSERT INTO `database`.`allswipes` (`ts`, `personnelId`) VALUES (NOW(), $id)";
 		
 		if (mysqli_query($conn, $sql)) {
 		} else {
