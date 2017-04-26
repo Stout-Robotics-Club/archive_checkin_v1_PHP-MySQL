@@ -2,12 +2,12 @@
 
 	<?php
 		$logFilename = ".swipes.log";
-		$theDate = exec("date +%Y%m%d%H%M%S");
+		$theDate = exec("date +%Y-%m-%d_%H:%M:%S");
 		$ekDate = date("Y-m-d H:i:s");
 		echo($ekDate);
 		function appendToLog ($argument) {
 			global $theDate, $logFilename;
-			exec("echo " . $theDate . " " . $argument . " >> " . $logFilename);
+			shell_exec("echo " . $theDate . " '" . $argument . "' >> " . $logFilename);
 		}
 		if(isset($_POST['id']) && strlen($_POST['id']) > 0){
 			appendToLog("swiped: " . $_POST['id']);
@@ -48,7 +48,7 @@
 		
 		<!-- Time out fuction for the card swipe to go back to   -->
 		<script type="text/javascript">
-			setTimeout(window.location.assign("cardswipe.php"), 10);
+			setTimeout(window.location.assign("cardswipe.php"), 5000);
 		</script>
 	</head>
 	
