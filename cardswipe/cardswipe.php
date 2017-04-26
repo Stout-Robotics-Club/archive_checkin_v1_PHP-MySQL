@@ -1,5 +1,9 @@
 <!DOCTYPE HTML>
 <html>
+	<?php
+		ini_set("display_errors","On");
+
+	?>
 	<head>
 		<title>Card Swipe</title>
 		<link rel="stylesheet" href="style.css">

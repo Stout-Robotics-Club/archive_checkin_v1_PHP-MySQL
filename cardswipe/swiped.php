@@ -1,7 +1,21 @@
 <html>
 
 	<?php
-	
+		$logFilename = ".swipes.log";
+		$theDate = exec("date +%Y%m%d%H%M%S");
+		$ekDate = date("Y-m-d H:i:s");
+		echo($ekDate);
+		function appendToLog ($argument) {
+			exec("echo " . $theDate . " " . $argument . " >> " . $logFilename);
+		}
+		if(isset($_POST['id']) && strlen($_POST['id']) > 0){
+			appendToLog("swiped: " . $_POST['id']);
+		} else {
+			$badMsg = "bad swipe: " . "\$_POST['id'] not set.";
+			appendToLog($badMsg);
+			echo $badMsg . '<br />';
+		}
+		
 		$username = "username";
 		$password = "password";
 		$dbname = "database";
@@ -33,7 +47,7 @@
 		
 		<!-- Time out fuction for the card swipe to go back to   -->
 		<script type="text/javascript">
-			setTimeout(window.location.assign("cardswipe.php"), 3000);
+			setTimeout(window.location.assign("cardswipe.php"), 10);
 		</script>
 	</head>
 	
