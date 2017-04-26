@@ -6,6 +6,7 @@
 		$ekDate = date("Y-m-d H:i:s");
 		echo($ekDate);
 		function appendToLog ($argument) {
+			global $theDate, $logFilename;
 			exec("echo " . $theDate . " " . $argument . " >> " . $logFilename);
 		}
 		if(isset($_POST['id']) && strlen($_POST['id']) > 0){
